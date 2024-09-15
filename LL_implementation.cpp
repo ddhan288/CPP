@@ -24,7 +24,13 @@ void print(Node* &head){
   cout << endl;
 }
 
-//function to 
+//function to add a node at the front(head)
+void insertAtHead (Node* &head, int d){
+  // create a node;
+  Node* temp = new Node(d);
+  temp->next = head;
+  head = temp;
+}
 
 int main(){
   //created a new node;
