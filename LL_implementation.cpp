@@ -17,7 +17,7 @@ class Node {
 void print(Node* &head){
   //create a new node 
   Node* temp = head;
-  while(!temp == NULL){
+  while(temp!= NULL){
     cout<< temp->data<< " ";
     temp = temp->next;
   }
@@ -31,6 +31,13 @@ void insertAtHead (Node* &head, int d){
   temp->next = head;
   head = temp;
 }
+// function to add a node at the end (tail)
+void insertAtTail(Node* &tail, int d){
+  //create a node 
+  Node* temp = new Node(d);
+  tail->next = temp;
+  tail = temp;
+}
 
 int main(){
   //created a new node;
@@ -42,6 +49,10 @@ int main(){
   Node* head = node1;
   print(head);
 
+  insertAtHead(head,12);
+  print (head);
+  insertAtHead(head,15);
+  print (head);
 
   return 0;
 }
