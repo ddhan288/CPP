@@ -7,7 +7,7 @@ struct ListNode {
     ListNode* next;
     ListNode(int x) : val(x), next(NULL) {}  // Constructor for convenience
 };
-struct ListNode * intersectingNode(struct ListNode * head1,struct ListNode* head2){
+struct ListNode * intersectingNode(struct ListNode*  head1,struct ListNode* head2){
   struct ListNode * temp;
   while(head1 != NULL){
     temp = head2;
