@@ -32,14 +32,14 @@ int getMinDiff(vector<int>& arr, int n, int k) {
 
 int main() {
     // Example 1
-    vector<int> arr1 = {1, 5, 8, 10};
+    vector<int> arr1 = {2, 4, 8, 10};
     int k1 = 2;
     cout << "Minimum difference: " << getMinDiff(arr1, arr1.size(), k1) << endl;
 
-    // Example 2
-    vector<int> arr2 = {3, 9, 12, 16, 20};
-    int k2 = 3;
-    cout << "Minimum difference: " << getMinDiff(arr2, arr2.size(), k2) << endl;
+    // // Example 2
+    // vector<int> arr2 = {3, 9, 12, 16, 20};
+    // int k2 = 3;
+    // cout << "Minimum difference: " << getMinDiff(arr2, arr2.size(), k2) << endl;
 
     return 0;
 }
