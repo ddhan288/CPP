@@ -23,7 +23,7 @@ int getMinDiff(vector<int>& arr, int n, int k) {
         // Skip if min_height becomes negative
         if (min_height < 0) continue;
 
-        // Update the result if the new difference is smaller
+        // Update the result if the new difference is smallers
         result = min(result, max_height - min_height);
     }
 
