@@ -1,3 +1,4 @@
 a.out
 *.json
-.vscode
+
+.vscode/settings.json
