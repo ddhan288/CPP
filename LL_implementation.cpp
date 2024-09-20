@@ -117,6 +117,53 @@ void deleteNode(int position, Node* &head, Node* &tail){
   }
   
 }
+void deleteNodeWithValue(int value, Node* &head, Node* &tail) {
+    if (head == NULL) {
+        cout << "List is empty!" << endl;
+        return;
+    }
+
+    Node* temp = head;
+    Node* prev = NULL;
+
+    // Case 1: The node to be deleted is the head
+    if (head->data == value) {
+        head = head->next;  // Move the head to the next node
+        temp->next = NULL;   // Unlink the deleted node
+        delete temp;         // Free the memory of the old head
+        cout << "Node with value " << value << " deleted." << endl;
+
+        // If the head is now NULL, update the tail as well
+        if (head == NULL) {
+            tail = NULL;
+        }
+        return;
+    }
+
+    // Case 2: The node to be deleted is somewhere in the middle or at the end
+    while (temp != NULL && temp->data != value) {
+        prev = temp;
+        temp = temp->next;
+    }
+
+    // If the value was not found in the list
+    if (temp == NULL) {
+        cout << "Node with value " << value << " not found." << endl;
+        return;
+    }
+
+    // Unlink the node to be deleted
+    prev->next = temp->next;
+
+    // If we are deleting the last node, update the tail
+    if (temp->next == NULL) {
+        tail = prev;
+    }
+
+    temp->next = NULL;
+    delete temp;  // Free the memory of the node
+    cout << "Node with value " << value << " deleted." << endl;
+}
 
 int main(){
   //created a new node;
@@ -153,6 +200,11 @@ int main(){
   cout<<"head :"<< head-> data<< endl;
   cout<<"tail :" <<tail-> data<< endl;
   deleteNode(6,head,tail);
+  print(head);
+  cout<<"head :"<< head-> data<< endl;
+  cout<<"tail :" <<tail-> data<< endl;
+
+  deleteNodeWithValue(50,head,tail);
   print(head);
   cout<<"head :"<< head-> data<< endl;
   cout<<"tail :" <<tail-> data<< endl;
